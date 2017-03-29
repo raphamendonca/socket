@@ -10,6 +10,11 @@ public class SocketUtil {
 	private String HOSTNAME;
 	private int PORTNUMBER;
 
+	/**
+	 * Classe utilitaria para executar chamadas no via socket atavés de um serviço telnet.
+	 * @param hostName nome do servidor ou ip
+	 * @param portNumber porta em que o serviço estará disponível.
+	 */
 	public SocketUtil( String hostName, int portNumber) {
 		HOSTNAME = hostName;
 		PORTNUMBER = portNumber;
@@ -37,6 +42,15 @@ public class SocketUtil {
 		}
 	}
 
+	/**
+	 * Executa a busca no servidor determinado, com base no comando e no delimitador final do retorno
+	 * 
+	 * Obs: o Exemplo que utilizei tinha um marcador determinando o fim da String de retorno
+	 * 
+	 * @param commando que o servidor espera para devolver alguma resposta
+	 * @param finalMarker marcador final da String de retorno
+	 * @return
+	 */
 	public String executaBusca(String commando, String finalMarker){
 
 		socketConnect(HOSTNAME, PORTNUMBER);
