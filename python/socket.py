@@ -1,15 +1,12 @@
 import socket
 
-s = socket.socket()
+sok = socket.socket()
 
 hostname = 'nomedoservidor'
-
 port = 1234
 
-s.connect((hostname,port))
+sok.connect((hostname,port))
+print( sok.recv(1024))
+#comando = ""
 
-print( s.recv(1024))
-
-command = ""
-
-s.close()
+sok.close()
